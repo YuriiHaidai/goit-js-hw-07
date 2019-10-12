@@ -1,0 +1,25 @@
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+#gallery li {
+  list-style: none;
+}
+
+#gallery img {
+  height: 300px;
+}
+
+/* task 06 */
+
+#validation-input.valid {
+  outline: 3px solid #4caf50;
+}
+
+#validation-input.invalid {
+  outline: 3px solid #f44336;
+}
