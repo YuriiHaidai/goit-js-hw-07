@@ -1,3 +1,5 @@
+"use strict";
+
 const ingredients = [
   "Картошка",
   "Грибы",
@@ -9,7 +11,7 @@ const ingredients = [
 
 const list = document.querySelector("#ingredients");
 
-ingredients.map(item => {
+ingredients.reduce((acc, item) => {
   const createLi = document.createElement("li");
   createLi.insertAdjacentHTML("afterbegin", item);
   list.appendChild(createLi);
