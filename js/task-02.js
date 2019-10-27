@@ -1,24 +1,24 @@
-'use strict';
+"use strict";
 
 const ingredients = [
-  'Картошка',
-  'Грибы',
-  'Чеснок',
-  'Помидоры',
-  'Зелень',
-  'Приправы',
+  "Картошка",
+  "Грибы",
+  "Чеснок",
+  "Помидоры",
+  "Зелень",
+  "Приправы"
 ];
 
-const list = document.querySelector('#ingredients');
+const list = document.querySelector("#ingredients");
 
 function createList() {
   const arr = [];
-  const createLi = document.createElement('li');
+  const createLi = document.createElement("li");
   ingredients.forEach(ingredient => {
     createLi.textContent = ingredient;
     arr.push(createLi.outerHTML);
   });
-  return arr.join('');
+  return arr.join("");
 }
 
-list.innerHTML = createList();
+list.insertAdjacentHTML("afterbegin", createList());
