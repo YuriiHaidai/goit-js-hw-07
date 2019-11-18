@@ -12,13 +12,11 @@ const ingredients = [
 const list = document.querySelector("#ingredients");
 
 function createList() {
-  const arr = [];
-  const createLi = document.createElement("li");
-  ingredients.forEach(ingredient => {
-    createLi.textContent = ingredient;
-    arr.push(createLi.outerHTML);
+  return ingredients.map(ingredient => {
+    const elemLi = document.createElement("li");
+    elemLi.textContent = ingredient;
+    return elemLi;
   });
-  return arr.join("");
 }
 
-list.insertAdjacentHTML("afterbegin", createList());
+list.append(...createList());

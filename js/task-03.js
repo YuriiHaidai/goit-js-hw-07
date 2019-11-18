@@ -21,16 +21,14 @@ const images = [
 const list = document.querySelector("#gallery");
 
 function createGalery() {
-  const arr = [];
-  const createLi = document.createElement("li");
-  const createImg = document.createElement("img");
-  images.forEach(image => {
-    createImg.setAttribute("src", image.url);
-    createImg.setAttribute("alt", image.alt);
-    createLi.appendChild(createImg);
-    arr.push(createLi.outerHTML);
+  return images.map(image => {
+    const elemLi = document.createElement("li");
+    const elemImg = document.createElement("img");
+    elemImg.setAttribute("src", image.url);
+    elemImg.setAttribute("alt", image.alt);
+    elemLi.appendChild(elemImg);
+    return elemLi;
   });
-  return arr.join("");
 }
 
-list.insertAdjacentHTML("afterbegin", createGalery());
+list.append(...createGalery());
